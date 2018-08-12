@@ -8,16 +8,11 @@ import Icon from "./icon";
 class PlayingCard extends React.PureComponent {
   static propTypes = {
     value: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(["club", "spade", "heart", "diamond"]),
-    onClick: PropTypes.func
+    type: PropTypes.oneOf(["club", "spade", "heart", "diamond"])
   };
 
   static defaultProps = {
-    onClick: () => ({}),
     type: undefined
-  };
-  onClick = () => {
-    this.props.onClick(this.props.type, this.props.value);
   };
   render() {
     return (

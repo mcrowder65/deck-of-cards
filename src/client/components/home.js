@@ -65,7 +65,6 @@ class Home extends React.Component {
     ],
     dealerCards: []
   };
-  // TODO add test
   addToDealer = () => {
     this.setState(state => {
       if (this.state.cards.length > 0) {
@@ -79,7 +78,16 @@ class Home extends React.Component {
       }
     });
   };
-  shuffle = () => {};
+  shuffle = () => {
+    const cards = [...this.state.cards];
+    for (let i = 0; i < cards.length; i++) {
+      const temp = cards[i];
+      const rand = Math.floor(Math.random() * cards.length);
+      cards[i] = cards[rand];
+      cards[rand] = temp;
+    }
+    this.setState({ cards });
+  };
   render() {
     return (
       <div className={styles.cards}>
