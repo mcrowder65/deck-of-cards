@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/mcrowder65/deck-of-cards.svg?branch=master)](https://travis-ci.org/mcrowder65/deck-of-cards)
-
+[![Coverage Status](https://coveralls.io/repos/github/mcrowder65/deck-of-cards/badge.svg?branch=master)](https://coveralls.io/github/mcrowder65/deck-of-cards?branch=master)
 
 # Deck of Cards
 

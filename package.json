@@ -11,7 +11,7 @@
     "webpack": "export NODE_ENV=production && ./node_modules/.bin/webpack -p --progress",
     "bundlesize": "bundlesize",
     "analyze-bundle": "export ANALYZE_BUNDLE=true && npm run webpack",
-    "coveralls": "npm run coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [],
   "author": "",
@@ -89,7 +89,8 @@
       "src/client/"
     ],
     "coverageReporters": [
-      "html"
+      "html",
+      "lcov"
     ]
   }
 }
