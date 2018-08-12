@@ -5,10 +5,15 @@ import styles from "./styles/card.scss";
 
 class Card extends React.Component {
   static propTypes = {
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
+    onClick: PropTypes.func.isRequired
   };
   render() {
-    return <div className={styles.card}>{this.props.children}</div>;
+    return (
+      <div className={styles.card} onClick={this.props.onClick}>
+        {this.props.children}
+      </div>
+    );
   }
 }
 

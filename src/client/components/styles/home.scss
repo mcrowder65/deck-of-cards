@@ -1,5 +1,11 @@
 
 .cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
 }
