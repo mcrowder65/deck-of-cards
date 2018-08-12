@@ -46,11 +46,17 @@ describe("shuffle", () => {
   });
   test("that all cards are still there after shuffling", () => {
     const newCards = comp.instance().state.cards;
+    const arr = [];
     for (const card of initialCards) {
       const result = newCards.find(
         c => c.type === card.type && c.value === card.value
       );
+      if (!arr.find(c => c.type === card.type && c.value === card.value)) {
+        // this is just a check that no cards are duplicated
+        arr.push(card);
+      }
       expect(result).toEqual(card);
     }
+    expect(arr).toHaveLength(initialCards.length);
   });
 });
