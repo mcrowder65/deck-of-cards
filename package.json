@@ -10,7 +10,8 @@
     "linter": "./node_modules/.bin/eslint src --ext .js,.jsx && ./node_modules/.bin/eslint test --ext .js,.jsx",
     "webpack": "export NODE_ENV=production && ./node_modules/.bin/webpack -p --progress",
     "bundlesize": "bundlesize",
-    "analyze-bundle": "export ANALYZE_BUNDLE=true && npm run webpack"
+    "analyze-bundle": "export ANALYZE_BUNDLE=true && npm run webpack",
+    "coveralls": "npm run coveralls"
   },
   "keywords": [],
   "author": "",
@@ -41,6 +42,7 @@
     "babel-preset-react": "6.24.1",
     "bundlesize": "0.17.0",
     "compression-webpack-plugin": "1.1.11",
+    "coveralls": "3.0.2",
     "css-loader": "0.28.11",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
