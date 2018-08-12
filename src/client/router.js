@@ -8,11 +8,9 @@ import { browserHistory } from "./browser-history";
 const Router = () => (
   <BrowserRouter history={browserHistory}>
     <div>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Home} />
     </div>
   </BrowserRouter>
-
 );
-
 
 export default Router;

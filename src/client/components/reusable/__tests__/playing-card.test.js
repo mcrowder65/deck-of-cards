@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Comp from "../card";
+import Comp from "../playing-card";
 
 test("that it mounts with no errors", () => {
   const result = mount(<Comp />);

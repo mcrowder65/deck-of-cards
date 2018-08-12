@@ -1,0 +1,16 @@
+.playingCard {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.children {
+  font-size: 48px;
+}
+.row {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}

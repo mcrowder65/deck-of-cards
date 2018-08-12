@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 import styles from "./styles/card.scss";
 
-class Card extends React.PureComponent {
+class Card extends React.Component {
   static propTypes = {
-    content: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired
   };
   render() {
-    return <div className={styles.card}>{this.props.content}</div>;
+    return <div className={styles.card}>{this.props.children}</div>;
   }
 }
 
