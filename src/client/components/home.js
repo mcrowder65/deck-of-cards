@@ -65,21 +65,39 @@ class Home extends React.Component {
     ],
     dealerCards: []
   };
-
-  addToDealer = (type, value) => {
+  // TODO add test
+  addToDealer = () => {
     this.setState(state => {
-      return {
-        cards: state.cards.filter(c => c.type !== type || c.value !== value),
-        dealerCards: [...state.dealerCards, { type, value }]
-      };
+      if (this.state.cards.length > 0) {
+        const [dealerCard, ...cards] = state.cards;
+        return {
+          cards,
+          dealerCards: [...state.dealerCards, dealerCard]
+        };
+      } else {
+        return state;
+      }
     });
   };
+  shuffle = () => {};
   render() {
     return (
       <div className={styles.cards}>
-        <Deck cards={this.state.cards} onCardClick={this.addToDealer} />
-        <h1>Dealer Cards!</h1>
-        <Deck cards={this.state.dealerCards} />
+        <PlayingCard value="DECK" />
+        <div className={styles.buttons}>
+          <button className={styles.button} onClick={this.shuffle}>
+            SHUFFLE
+          </button>
+          <button className={styles.button} onClick={this.addToDealer}>
+            DRAW CARD
+          </button>
+        </div>
+        {this.state.dealerCards.length > 0 ? (
+          <React.Fragment>
+            <h1>Dealer Cards!</h1>
+            <Deck cards={this.state.dealerCards} />
+          </React.Fragment>
+        ) : null}
       </div>
     );
   }
@@ -90,12 +108,9 @@ function Deck(props) {
     <div className={styles.deck}>
       {props.cards.map((card, index) => {
         return (
-          <PlayingCard
-            key={index}
-            type={card.type}
-            onClick={props.onCardClick}
-            value={card.value}
-          />
+          <div className={styles.playingCard} key={index}>
+            <PlayingCard type={card.type} value={card.value} />
+          </div>
         );
       })}
     </div>
@@ -107,10 +122,6 @@ Deck.propTypes = {
       type: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired
     })
-  ).isRequired,
-  onCardClick: PropTypes.func
-};
-Deck.defaultProps = {
-  onCardClick: undefined
+  ).isRequired
 };
 export default Home;
