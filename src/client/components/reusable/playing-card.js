@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Card } from "@material-ui/core";
 
 import styles from "./styles/playing-card.scss";
-import Card from "./card";
 import Icon from "./icon";
 
 class PlayingCard extends React.PureComponent {
